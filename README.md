@@ -25,17 +25,10 @@ This Flask application serves as a simple web interface for adding users and vie
 - **templates/user.html**: 
   - The user information HTML template.
   - Displays the user’s ID, name, and the source (either Redis or MySQL) where the information was retrieved from.
-    
 
-This application demonstrates basic operations with integration between a relational database (MySQL) and an in-memory store (Redis) for faster data retrieval. Bellow is a screenshoot of the Homepage, I'll add a new user:
+This application demonstrates basic operations with integration between a relational database (MySQL) and an in-memory store (Redis) for faster data retrieval. Bellow is a screenshoot of the Homepage, I'll add a new user
 
-
-<img width="659" alt="Screen Shot 1446-04-19 at 1 35 19 PM" src="https://github.com/user-attachments/assets/2eb60bbb-0b2a-4d43-aa07-8a2b648032db">
-
-
-Notice that after visiting `/user/<user_id>` the Source shows that data came from Redis:
-
-<img width="472" alt="Screen Shot 1446-04-19 at 1 42 34 PM" src="https://github.com/user-attachments/assets/8a99c296-fd68-4854-aa04-491f0a7ebc8d">
+Notice that after visiting `/user/<user_id>` the Source shows that data came from Redis
 
 
 ### Now if I kill and re-run Redis Container the Source will show that data are fetched from MySQL:
@@ -72,11 +65,7 @@ capstone-redis-1  | 1:M 22 Oct 2024 10:44:06.944 * Running mode=standalone, port
 capstone-redis-1  | 1:M 22 Oct 2024 10:44:06.944 * Server initialized
 capstone-redis-1  | 1:M 22 Oct 2024 10:44:06.944 * Ready to accept connections tcp
 ```
-- Notince that Source changed to MySQL:
-
-
-<img width="498" alt="Screen Shot 1446-04-19 at 1 44 24 PM" src="https://github.com/user-attachments/assets/84d9b3c9-41a4-4e74-8441-0be7e71f866b">
-
+- Notince that Source changed to MySQL
 
 # Project Requirements:
 
@@ -100,16 +89,9 @@ capstone-redis-1  | 1:M 22 Oct 2024 10:44:06.944 * Ready to accept connections t
 #### 3. **CI/CD Pipeline using GitHub Actions**: 
 - Write a workflow that triggers on **Push** to test the app, build the Docker image, and push it to a public repository in your Docker Hub account. [TAKE A SCREENSHOT 01]
 - The same workflow should trigger on a **Pull Request** to the **main** branch to test the app. [TAKE A SCREENSHOT 02]
-- See the screenshots below:
 
-<img width="765" alt="Screen Shot 1446-04-20 at 12 04 00 AM" src="https://github.com/user-attachments/assets/fd092720-c366-48e2-9343-4226a4c69cbc">
-
-
-<img width="657" alt="Screen Shot 1446-04-20 at 1 15 44 PM" src="https://github.com/user-attachments/assets/6c2c4b7e-1ad5-43f9-b7c4-55e2b9cc2759">
 
 - Write another workflow that triggers on **Push** to the **main** branch to pull the Docker image from your public repository and deploy it to the HTTP servers. [TAKE A SCREENSHOT 03]
-
-  <img width="442" alt="Screen Shot 1446-04-20 at 12 20 22 AM" src="https://github.com/user-attachments/assets/6080d672-b7d3-43ba-bf52-fc8d3541905f">
 
 
 #### 4. **Infrastructure as Code Using Terraform**:
@@ -125,14 +107,9 @@ capstone-redis-1  | 1:M 22 Oct 2024 10:44:06.944 * Ready to accept connections t
 The following sketch demonstrates the infrastructure design:
 
 
-![capstone](https://github.com/user-attachments/assets/0bbcee9b-ec80-4c9b-a938-e978d0d467bf)
-
 #### 5. Functional Application
 
 - Take a screenshot of a functional application accessed through the load balancer [TAKE A SCREENSHOT 04]
-
-  <img width="699" alt="Screen Shot 1446-04-20 at 2 35 26 PM" src="https://github.com/user-attachments/assets/8ebcbd74-0988-4bc0-8d8d-1cde957e059b">
-
 
 #### 6. **Application Directory Structure**:
 
